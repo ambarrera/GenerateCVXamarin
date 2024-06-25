@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DynamicForm.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="10">
+
+            <Entry x:Name="entryNombre" Placeholder="Nombre"/>
+            <Entry x:Name="entryApellidos" Placeholder="Apellidos"/>
+
+            <DatePicker x:Name="datePickerFechaNacimiento" />
+
+            <Picker x:Name="pickerNacionalidad" Title="Nacionalidad">
+
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Argentina</x:String>
+                        <x:String>Chile</x:String>
+                        <x:String>España</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+
+            <Label Text="Aptitudes"/>
+            <StackLayout x:Name="stackAptitudes">
+                <CheckBox Content="Trabajo en equipo" />
+                <CheckBox Content="Liderazgo" />
+
+            </StackLayout>
+
+            <Label Text="Habilidades"/>
+            <StackLayout x:Name="stackHabilidades">
+                <CheckBox Content="Comunicación" />
+                <CheckBox Content="Creatividad" />
+
+            </StackLayout>
+
+            <Label Text="Lenguajes de Programación"/>
+            <StackLayout x:Name="stackLenguajes">
+                <CheckBox Content="C#" />
+                <CheckBox Content="Java" />
+
+            </StackLayout>
+
+
+            <Editor x:Name="editorPerfil" Placeholder="Perfil"/>
+
+
+            <Label Text="Experiencia Laboral (opcional)"/>
+            <Editor x:Name="editorExperienciaLaboral" Placeholder="Añadir experiencia laboral"/>
+
+            <Label Text="Educación (opcional)"/>
+            <Editor x:Name="editorEducacion" Placeholder="Añadir educación"/>
+
+
+            <Button Text="Enviar" Clicked="OnEnviarClicked"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
